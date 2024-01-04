@@ -7,7 +7,7 @@ echo -e "\e[36mENABLING NODEJS VERSION\e[0m"
 dnf module enable nodejs:18 -y &>/tmp/expense.log
 
 echo echo -e "\e[36mINSTALLING NODEJS VERSION\e[0m"
-dnf install nodejs -y >/tmp/expense.log
+dnf install nodejs -y &>/tmp/expense.log
 
 echo -e "\e[36mBACKEND SERVICE CONFIGURATION\e[0m"
 cp backend.service /etc/systemd/system/backend.service &>/tmp/expense.log
