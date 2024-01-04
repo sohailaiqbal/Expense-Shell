@@ -1,12 +1,10 @@
-
 echo -e "\e[36mDISABLING NODEJS VERSION\e[0m"
-
 dnf module disable nodejs -y &>/tmp/expense.log
 
 echo -e "\e[36mENABLING NODEJS VERSION\e[0m"
 dnf module enable nodejs:18 -y &>/tmp/expense.log
 
-echo echo -e "\e[36mINSTALLING NODEJS VERSION\e[0m"
+echo -e "\e[36mINSTALLING NODEJS VERSION\e[0m"
 dnf install nodejs -y &>/tmp/expense.log
 
 echo -e "\e[36mBACKEND SERVICE CONFIGURATION\e[0m"
@@ -22,7 +20,7 @@ echo -e "\e[36mCREATING APPLICATION DIRECTORY\e[0m"
 mkdir /app &>/tmp/expense.log
 
 echo -e "\e[36mDOWNLOADING APPLICATION CONTENT\e[0m"
-curl -o /tmp/backend.zip https://expense-artifacts.s3.amazonaws.com/backend.zip >/tmp/expense.log
+curl -o /tmp/backend.zip https://expense-artifacts.s3.amazonaws.com/backend.zip &>/tmp/expense.log
 
 cd /app &>/tmp/expense.log
 
