@@ -9,7 +9,7 @@ Head "Copy Expense Config File"
 cp expense.conf /etc/nginx/default.d/expense.conf &>>$log_file
 echo $?
 
-App_prereq "/usr/share/nginx/html"
+App_Prereq "/usr/share/nginx/html"
 
 
 Head "STARTING NGINX SERVICE"
