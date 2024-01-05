@@ -1,3 +1,4 @@
+MYSQL_PASSWORD=$1
 log_file=/tmp/expense.log
 echo -e "\e[36mDISABLING NODEJS VERSION\e[0m"
 dnf module disable nodejs -y &>>$log_file
@@ -40,4 +41,4 @@ echo -e "\e[36mINSTALLING MYSQL CLIENT\e[0m"
 dnf install mysql -y &>>$log_file
 
 echo -e "\e[36mLOADING SCHEMA\e[0m"
-mysql -h mysql-dev.sidevops.online -uroot -pExpenseApp@1 < /app/schema/backend.sql &>>$log_file
+mysql -h mysql-dev.sidevops.online -uroot -p${MYSQL_PASSWORD} < /app/schema/backend.sql &>>$log_file
