@@ -1,4 +1,5 @@
 MYSQL_PASSWORD=$1
+component=backend
 source common.sh
 
 Head "DISABLING NODEJS VERSION"
@@ -21,24 +22,7 @@ Head "ADDING APPLICATION USER"
 useradd expense &>>$log_file
 echo $?
 
-Head "DELETING EXITING APP CONTENT"
-rm -rf /app &>>$log_file
-echo $?
-
-Head "CREATING APPLICATION DIRECTORY"
-mkdir /app &>>$log_file
-echo $?
-
-Head "DOWNLOADING APPLICATION CONTENT"
-curl -o /tmp/backend.zip https://expense-artifacts.s3.amazonaws.com/backend.zip &>/tmp/expense.log
-echo $?
-
-cd /app &>>$log_file
-echo $?
-
-Head "EXTRACTING APPLICATION CONTENT"
-unzip /tmp/backend.zip &>>$log_file
-echo $?
+App_Prereq "/app"
 
 Head "DOWNLOADING APPLICATION DEPENDENCIES"
 npm install &>>$log_file
