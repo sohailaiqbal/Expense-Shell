@@ -24,7 +24,7 @@ useradd expense &>>$log_file
 Head "DELETING EXITING APP CONTENT"
 rm -rf /app &>>$log_file
 
-Head"CREATING APPLICATION DIRECTORY"
+Head "CREATING APPLICATION DIRECTORY"
 mkdir /app &>>$log_file
 
 Head "DOWNLOADING APPLICATION CONTENT"
