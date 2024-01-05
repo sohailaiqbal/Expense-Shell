@@ -1,9 +1,5 @@
 MYSQL_PASSWORD=$1
-log_file=/tmp/expense.log
-
-Head() {
-  echo -e "\e[33m$1\e[0m"
-}
+source common.sh
 
 Head "INSTALLING NGINX"
 dnf install nginx -y &>>$log_file
