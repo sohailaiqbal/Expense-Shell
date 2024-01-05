@@ -27,9 +27,10 @@ echo $?
 
 cd /usr/share/nginx/html
 
-
+Head "EXTRACTING APPLICATION CODE"
 unzip /tmp/frontend.zip &>>$log_file
 echo $?
-systemctl restart nginx &>>$log_file
 
+Head "STARTING NGINX SERVICE"
+systemctl restart nginx &>>$log_file
 echo $?
